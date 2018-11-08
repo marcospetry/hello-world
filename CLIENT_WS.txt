@@ -1,0 +1,32 @@
+	SesaWS port = new SesaWS_Service().getSesaWSPort();
+		
+		Estabelecimento estab_teste = new Estabelecimento();
+		
+		estab_teste.setCodigo(6);
+
+		RespostaTeste resposta_teste = new RespostaTeste();
+		Requisicao req_teste = new Requisicao();
+		
+		
+		
+		resposta_teste = port.buscarEstabelecimento(estab_teste);
+		Login login_teste = new Login();
+
+		// teste CLient para o caron
+		login_teste.setCnes("0013633");
+		login_teste.setUsuario("ws_caron");
+		login_teste.setSenha("senha_ws_caron");
+		
+		// criar login para SysComp
+		Resposta resp_teste = new Resposta();
+		Requisicao requis_teste = new Requisicao();
+		requis_teste.setLogin(login_teste);
+		
+		resp_teste = port.consultarTiposDeLeitos(requis_teste);
+		
+		System.out.println("Resultado: " + resposta_teste.getDescricao());
+
+		System.out.println("---------------------------------------------------------------------");
+		
+	//	System.out.println("Resultado Consulta Especialidadse " + resp_teste.getLista().getListaObj().get(1).getDescricao());  
+		 
