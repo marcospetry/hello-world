@@ -7,7 +7,7 @@
 		RespostaTeste resposta_teste = new RespostaTeste();
 		Requisicao req_teste = new Requisicao();
 		
-		
+		//asasasasas teste petry guthub em 08112018
 		
 		resposta_teste = port.buscarEstabelecimento(estab_teste);
 		Login login_teste = new Login();
